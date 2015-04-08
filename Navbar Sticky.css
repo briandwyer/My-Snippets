@@ -1,0 +1,214 @@
+<nav class="navbar navbar-default navbar-fixed-top affix-top js-navbar-highlight" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+          <div class="container-fluid">
+            
+              
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              
+              <a id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span></span></a>
+              <div id="logo">
+                        <a href="index.html" class="standard-logo navbar-brand"><img src="images/LogoBirdWhite.png" alt="Greenfinch Logo"></a>
+                        <a class="text-logo navbar-brand page-scroll" href="#landing"><img src="images/greenfinch-logo-textGreen.png" alt="Greenfinch Logo"></a>
+                 </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav nav-pills pull-right">
+                <li><a href="#about-section" class="page-scroll">About</a></li>
+                <li><a href="#portfolio-section" class="page-scroll">Portfolio</a></li>
+                <li><a href="#clients-section" class="page-scroll">Clients</a></li>
+                <li><a href="#blog-section" class="page-scroll">Blog</a></li>
+				<li><a href="#careers-section" class="page-scroll">Careers</a></li>
+                <li><a href="#contact-section" class="page-scroll">Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+</nav>
+
+
+/******************************************
+    1. Navbar Section 
+******************************************/
+
+.affix-top, .affix-top .navbar-brand, .affix-top .nav,.affix, .affix .navbar-brand, .affix .nav, #logo {
+  -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.affix-top {
+  height: 80px;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(255,255,255,0.5);
+}
+.affix-top a, li.active > a{
+    color: #FEFEFE;
+    font-weight: normal;
+    font-size: 15px;
+  }
+ .affix-top a:hover{
+    color: #GGGGGG;
+  }
+
+  .affix .nav a {
+     color:  #444;
+     font-weight: normal;
+     font-size: 15px;
+  }
+  
+ .affix-top .navbar {
+    color: rgba(255,255,255,0);
+    padding-top: 30px;
+    font-size: 28px;
+  }
+
+ .affix-top .nav {
+    margin-top: 20px;
+  }
+
+.affix-top .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #010101;
+  }
+  
+
+.affix {
+  height: 60px;
+  background-color: rgba(255, 255, 255, 1);
+
+}
+
+ .affix .nav {
+    margin-top: 10px;
+  }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background: none;
+  color: #010101;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background: none;
+}
+
+
+#logo {
+  position: relative;
+  float: left;
+  font-family: Raleway, sans-serif;
+  font-size: 36px;
+  line-height: 100%;
+  margin-right: 40px;
+}
+
+#logo .standard-logo img, .affix #logo .text-logo {
+    -webkit-transition: opacity 1.7s ease-in-out;
+    -moz-transition: opacity 1.7s ease-in-out;
+    -ms-transition: opacity 1.7s ease-in-out;
+    -o-transition: opacity 1.7s ease-in-out;
+    transition: opacity 1.7s ease-in-out;
+
+}
+
+#logo .standard-logo img, .affix #logo .text-logo {
+  opacity: 1;
+  height: 50px;
+  width: auto;
+}
+
+
+
+.affix #logo .standard-logo img {
+  opacity: 0;
+  height: 0%;
+}
+ 
+.affix .navbar-brand {
+      padding-top: 15px;
+      padding-left: 10px;
+  }
+  
+#logo .text-logo {
+  opacity: 0;  
+  margin-top: 0px;
+  display: none;
+}
+
+.affix #logo .text-logo {
+  display: block;
+}
+
+.affix #logo .text-logo img {
+    height: 60px;
+}
+
+.white-nav {
+    width: 100%;
+    margin-bottom: 0px;
+    z-index: 102;
+}
+
+.affix-top.white-nav a {
+    color: #444;
+  }
+  
+.page-title-grey  {
+    margin-top: 80px;
+}
+
+.affix-top #nav-toggle {
+      top: 28px;
+}
+
+@media (max-width: 768px ){
+
+	#bs-example-navbar-collapse-1 {
+		background-color: #e7e7e7;
+		}
+	#bs-example-navbar-collapse-1 .nav {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.nav-pills > li {
+		width: 100%;
+		float: left;
+	}
+	#bs-example-navbar-collapse-1 .nav.pull-right {
+		float: left !important;
+	}
+
+	#bs-example-navbar-collapse-1 {
+		background-color: #FFF;
+		border-bottom: 1px solid #e7e7e7;
+	}
+	
+	.ipost {
+		padding-bottom: 15px;
+	}
+
+    .affix-top a {
+        color: gray;
+    }
+    
+    #bs-example-navbar-collapse-1 {
+          margin-top: 8px;
+    }
+    
+    .affix-top #bs-example-navbar-collapse-1 {
+          margin-top: 30px;
+    }
+    
+    .navbar-header {
+        float: none;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+       
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+}
+
+/**** Navbar Section End ******/
