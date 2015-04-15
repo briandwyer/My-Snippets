@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-top affix-top js-navbar-highlight" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
           <div class="container-fluid">
-            
-              
+
+
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              
+
               <a id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span></span></a>
               <div id="logo">
                         <a href="index.html" class="standard-logo navbar-brand"><img src="images/LogoBirdWhite.png" alt="Greenfinch Logo"></a>
@@ -28,7 +28,7 @@
 
 
 /******************************************
-    1. Navbar Section 
+    1. Navbar Section
 ******************************************/
 
 .affix-top, .affix-top .navbar-brand, .affix-top .nav,.affix, .affix .navbar-brand, .affix .nav, #logo {
@@ -49,7 +49,7 @@
     font-size: 15px;
   }
  .affix-top a:hover{
-    color: #GGGGGG;
+    color: #333;
   }
 
   .affix .nav a {
@@ -57,7 +57,7 @@
      font-weight: normal;
      font-size: 15px;
   }
-  
+
  .affix-top .navbar {
     color: rgba(255,255,255,0);
     padding-top: 30px;
@@ -71,7 +71,7 @@
 .affix-top .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #010101;
   }
-  
+
 
 .affix {
   height: 60px;
@@ -123,14 +123,14 @@
   opacity: 0;
   height: 0%;
 }
- 
+
 .affix .navbar-brand {
       padding-top: 15px;
       padding-left: 10px;
   }
-  
+
 #logo .text-logo {
-  opacity: 0;  
+  opacity: 0;
   margin-top: 0px;
   display: none;
 }
@@ -152,7 +152,7 @@
 .affix-top.white-nav a {
     color: #444;
   }
-  
+
 .page-title-grey  {
     margin-top: 80px;
 }
@@ -182,7 +182,7 @@
 		background-color: #FFF;
 		border-bottom: 1px solid #e7e7e7;
 	}
-	
+
 	.ipost {
 		padding-bottom: 15px;
 	}
@@ -190,22 +190,22 @@
     .affix-top a {
         color: gray;
     }
-    
+
     #bs-example-navbar-collapse-1 {
           margin-top: 8px;
     }
-    
+
     .affix-top #bs-example-navbar-collapse-1 {
           margin-top: 30px;
     }
-    
+
     .navbar-header {
         float: none;
     }
     .navbar-collapse.collapse {
         display: none !important;
     }
-       
+
     .navbar-collapse.collapse.in {
         display: block !important;
     }
