@@ -1,0 +1,60 @@
+/*************** JS ********************/
+
+var $goToTopEl = $('#gotoTop');
+// Goes in INIT
+$goToTopEl.click(function() {
+                $('body,html').stop(true).animate({scrollTop:0},400);
+                return false;
+        });
+// Goes in SCROLL
+windowscroll: function() {
+
+        if($window.scrollTop() > 450) {
+                    $goToTopEl.fadeIn();
+        } else {
+                    $goToTopEl.fadeOut();
+        }
+    }
+
+
+/*************** HTML *****************/
+<div id="gotoTop" class="fa fa-chevron-up fa-1" style="display: none;"></div>
+OR glyph version
+<div id="gotoTop" class="glyphicon glyphicon-chevron-up" style="display: none;"></div>
+
+/* ----------------------------------------------------------------
+   3. Go To Top
+-----------------------------------------------------------------*/
+/* SASS
+$backgroundColor: rgba(0,0,0,0.3);
+$hoverBackground: #1ABC9C;
+
+*/
+#gotoTop {
+    display: none;
+    z-index: 299;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.3); /* $backgroundColor */
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFF;
+    top: auto;
+    left: auto;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#gotoTop {
+    transition: background-color .2s linear;
+    -webkit-transition: background-color .2s linear;
+    -o-transition: background-color .2s linear;
+}
+
+#gotoTop:hover { background-color: #1ABC9C; /* $hoverBackground */}
+
+/*******  Go To Top End ************/
