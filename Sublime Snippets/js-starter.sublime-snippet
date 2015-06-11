@@ -1,0 +1,58 @@
+<snippet>
+	<content><![CDATA[
+'use strict';
+
+var SEMICOLON = SEMICOLON || \{\};
+
+(function(\$)\{
+    
+  //               //
+ //  FUNCTIONS    //
+//               //
+SEMICOLON.documentOnReady = \{
+    init: function()\{
+
+
+    \},
+    
+    windowscroll: function() \{
+        
+
+    \}
+
+\};
+
+SEMICOLON.functions = \{
+    
+    functionName: function()\{
+        
+  \}
+\};
+
+
+
+  //               //
+ //  DOM objects  //
+//               //
+var \$htmlBody = \$('body,html'),
+    \$window = \$(window),
+    isMobDevice = (/iphone|ipad|Android|webOS|iPod|BlackBerry|Windows Phone|ZuneWP7/gi).test(navigator.appVersion);
+
+
+  //          //
+ //  Events  //
+//          //
+\$(document).ready( SEMICOLON.documentOnReady.init );
+
+\$(document).scroll( SEMICOLON.documentOnReady.windowscroll );
+        
+        
+\})(jQuery);
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>js!</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
