@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+ \$('a.page-scroll').bind('click', function(event) {
+            var \$anchor = \$(this);
+            \$htmlBody.stop(true).animate({
+                    scrollTop: \$(\$anchor.attr('href')).offset().top - 55
+                  }, 1500);
+                  event.preventDefault();
+          });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>jsscroll</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
