@@ -33,6 +33,9 @@
   transform: rotate(0deg);
   top: -10px; 
 }
+#nav-toggle.collapsed span:after {
+    top: 10px;
+}
 /****HTML *****/
 <nav class="navbar navbar-default navbar-fixed-top affix-top js-navbar-highlight" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
           <div class="container-fluid">
