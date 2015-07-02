@@ -1,0 +1,50 @@
+<div id="toTop">
+     <span class="css-arrow"></span>
+</div>
+
+/**** CSS toTop up arrow *****/
+#toTop {
+    width: 70px;
+    height: 70px;
+    background: white;
+    opacity: 0.75;
+
+    right: 30px;
+    bottom: 0px;
+    position: absolute;
+}
+
+
+
+.css-arrow, .css-arrow:before, .css-arrow:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 2px;
+  width: 20px;
+  background: #00B2A9;
+  position: absolute;
+  display: block;
+  content: '';
+  right: 50%;
+  margin-right: -16px; /* half the width specified below */
+  top: 35px;
+}
+
+.css-arrow {
+    transform: rotate(90deg);
+    width: 32px;
+}
+
+.css-arrow:before, .css-arrow:after {
+   right: 32px;
+   top: 50%;
+}
+
+.css-arrow:before {
+  transform: rotate(-45deg);
+  margin-top: -8px;
+}
+.css-arrow:after {
+  transform: rotate(45deg);
+  margin-top: 6px;
+}

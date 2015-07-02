@@ -1,0 +1,49 @@
+<snippet>
+	<content><![CDATA[/****************************
+    Padding and Margins
+*****************************/
+
+.top-margin-lg {
+    margin-top: ${1:60}px;
+}
+.top-margin-md {
+    margin-top: ${2:30}px;
+}
+.top-margin-sm {
+    margin-top: ${3:15}px;
+}
+.bottom-margin-lg {
+    margin-bottom: ${1:60}px;
+}
+.bottom-margin-md {
+    margin-bottom: ${2:30}px;
+}
+.bottom-margin-sm {
+    margin-bottom: ${3:15}px;
+}
+.top-padding-lg {
+    padding-top: ${1:60}px;
+}
+.top-padding-md {
+    padding-top: ${2:30}px;
+}
+.top-padding-sm {
+    padding-top: ${3:15}px;
+}
+.bottom-padding-lg {
+    padding-bottom: ${1:60}px;
+}
+.bottom-padding-md {
+    padding-bottom: ${2:30}px;
+}
+.bottom-padding-sm {
+    padding-bottom: ${3:15}px;
+}
+
+/****  Padding and Margins End ******/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>cssPadMar</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
