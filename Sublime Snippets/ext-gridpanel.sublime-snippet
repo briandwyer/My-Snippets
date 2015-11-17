@@ -1,0 +1,83 @@
+<snippet>
+	<content><![CDATA[
+Ext.ns('HkiSm.ux');
+
+HkiSm.ux.${1:GridName}GridPanel = function(config) {
+    var thisGrid = this;
+
+    extColModel
+
+    extJsonStore
+
+    this.addBtn = new Ext.Button({
+        iconCls: 'button-submit',
+        text: 'Add Machine',
+        handler: function() {
+            var addNewRow = new HkiSm.ux.Add${2:RowWindow}();
+            addNewRow.show();
+        }
+    });
+
+    this.removeBtn = new Ext.Button({
+        iconCls: 'button-remove',
+        text: 'Delete',
+        handler: function() {
+            thisGrid.deleteRow(thisGrid);
+        }
+    });
+
+    HkiSm.ux.${1:GridName}GridPanel.superclass.constructor.call(this, {
+        id: '${1:GridName}-grid',
+        title: '${1:GridName}',
+        columns: this.colModel,
+        store: this.store,
+        height: 200,
+        scope: this,
+        tbar: [this.addBtn, this.removeBtn],
+        bbar: [this.addBtn, this.removeBtn], 
+        listeners: {
+            rowdblclick: function(grid, rowIndex) {
+                
+            }
+        }
+    });
+}
+
+Ext.extend(HkiSm.ux.${1:GridName}GridPanel, Ext.grid.GridPanel, {
+    deleteRow: function(thisGrid){
+        var row = thisGrid.getSelectionModel().getSelected();
+        if(row){
+            // Prompt for user data and process the result using a callback:
+            thisGrid.confirmDelete(row);
+        }else{
+            Ext.Msg.alert('Message', "Please select a Row");
+        }
+    },
+
+    confirmDelete: function(row){
+        Ext.Msg.confirm('Delete', 'Do you want to delete the selected Row', function(btn, text){
+                if (btn == 'ok') {
+                    Ext.Ajax.request({
+                        url: 'controllerUrl/delete.json',
+                        method: 'DELETE',
+                        success: function (response) {
+                            var thisGrid = Ext.getCmp('${1:GridName}-grid');
+                            Ext.Msg.alert('Success', "Row successfully deleted");
+                            thisGrid.store.reload();
+                        },
+                        failure: function () {
+                        },
+                        params: {
+                            id: row.id
+                        }
+                    });
+                }
+            });
+    }
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+this.colModel = new Ext.grid.ColumnModel({
+        columns: [
+            {
+                header: 'Date',
+                dataIndex: 'date',
+                width: 182
+            }, {
+                header: 'Recommended Sales Price',
+                dataIndex: 'recommendedSalesPrice',
+                width: 182
+            }
+        ]
+    });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extColModel</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

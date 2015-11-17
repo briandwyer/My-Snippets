@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+{
+	xtype: 'jsonselectlist',
+    fieldLabel: 'Select ${1:name}',
+    name: '${1:name}',
+    url: '${2:url}.json',
+    tooltip:'Select ${1:name}',
+    allowBlank : false,
+    listeners:{
+        scope: this,
+        'select': doSomeStuff
+    }
+}	
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extJsonSelectList</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

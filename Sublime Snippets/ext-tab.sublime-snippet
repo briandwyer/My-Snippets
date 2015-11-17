@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+Ext.ns('HkiSm.ux');
+
+HkiSm.ux.${1:TabName}Tab = function(config) {
+
+    this.filterPanel = new HkiSm.ux.${1:TabName}FilterPanel(this);
+    this.resultsGrid = new HkiSm.ux.${1:TabName}Grid(null);
+
+    tabId = '${1:TabName}Tab';
+    if (config && config.id){
+        tabId = config.id;
+    }
+
+    HkiSm.ux.${1:TabName}Tab.superclass.constructor.call(this, {
+        title: '${1:TabName}',
+        id: tabId,
+        items: [
+            this.filterPanel,
+            this.resultsGrid
+        ],
+        height: 650
+    });
+
+};
+
+Ext.extend(HkiSm.ux.${1:TabName}Tab, Ext.Panel, {
+    search: function(categoryId) {
+        this.resultsGrid.search(categoryId);
+    }
+});
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extTab</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

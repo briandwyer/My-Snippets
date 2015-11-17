@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+this.store = new Ext.data.JsonStore({
+        url: '${1:recommendedSalesPrice/byMachineMetaDataId.json}',
+        //baseParams: {machineMetaDataId: machineMetaDataId},
+        fields: [
+            {name: '${2:id}'},
+            {name: 'date', type: 'date'},
+            {name: 'recommendedSalesPrice'}
+        ],
+        autoLoad : false
+    });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extJsonStore</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
