@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+Ext.ns('HkiSm.ux');
+
+HkiSm.ux.${2:snippet} = function(config) {
+
+    Ext.apply(this, config);
+    var me = this;
+
+    HkiSm.ux.${2:snippet}.superclass.constructor.call(this, {
+        items: [
+        ]
+    });
+
+};
+
+Ext.extend(HkiSm.ux.${2:snippet}, Ext.${1:this}, {
+
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extBasicExtend</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

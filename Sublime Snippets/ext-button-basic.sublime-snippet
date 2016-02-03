@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+this.${1:varName} = new Ext.Button({
+        // id: 'button-id',
+        text: '${2:buttonText}',
+        handler: function() {
+            
+        }
+    });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extButton</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

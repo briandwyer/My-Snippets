@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+this.date = new Ext.form.DateField({
+        name      : 'date',
+        fieldLabel: 'Date',
+        allowBlank: false,
+        format    : 'j/m/Y',
+        allowBlank: false,
+        value: rspDate
+    });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extDate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

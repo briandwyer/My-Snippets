@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+this.form = new Ext.form.FormPanel({
+        //id: 'recommended-sales-price-form',
+        //frame: true,
+        monitorValid: true,
+
+        items: [
+            this.price,
+            this.date
+        ],
+        buttons: [
+            this.cancelBtn,
+            this.saveBtn
+        ],
+        listeners: {
+            clientValidation: function (form, valid) {
+                if(valid) {
+                    this.saveBtn.setDisabled(false);
+                } else {
+                    this.saveBtn.setDisabled(true);
+                }
+            }
+        }
+    });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extForm</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

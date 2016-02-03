@@ -1,0 +1,46 @@
+<snippet>
+	<content><![CDATA[
+public List<User> searchUsersByCriteria(UserSearchCriteria criteria) {
+
+
+        HibernateSessionProvider hsp = new HibernateSessionProvider();
+        Session session = hsp.getCurrentSession();
+        Criteria cr = session.createCriteria(User.class);
+
+        cr.setFirstResult(criteria.getStart());
+        cr.setMaxResults(criteria.getLimit());
+
+        if(criteria.getSort() != null){
+            if(criteria.getDir() != "desc"){
+                cr.addOrder(Order.desc(criteria.getSort()));
+            }else{ // if "asc" or not defined default to asc
+                cr.addOrder(Order.asc(criteria.getSort()));
+            }
+        }
+
+        if(!criteria.getUsername().isEmpty()){
+            cr.add(Restrictions.eq("username", criteria.getUsername().toLowerCase() + "%"));
+        }
+
+        cr.createAlias("user.userStoreRelationships", "userStoreRelationships");
+
+        if(criteria.getStoreId() != null){
+            cr.add(Restrictions.eq("userStoreRelationships.store", criteria.getStoreId()));
+        }
+
+        if (criteria.getStoreNumber() != null) {
+            cr.createAlias("userStoreRelationships.store", "store");
+            cr.add(Restrictions.eq("store.mcDonaldsStoreId", criteria.getStoreNumber()));
+        }
+
+
+        List<User> userList = cr.list();
+
+        return userList;
+    }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>javaHibernateCriteriaQuery</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.java</scope>
+</snippet>
