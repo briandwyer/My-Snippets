@@ -1,0 +1,104 @@
+<snippet>
+	<content><![CDATA[
+
+Ext.ns('HkiSm.ux');
+
+var ${1:globalVariableForWindow};
+
+HkiSm.ux.${2:extObjectName} = function(modelId, config) {
+
+    Ext.apply(this, config);
+
+    var window = this;
+
+    this.saveBtn = new Ext.Button({
+        text: 'Save',
+        disabled: true,
+        handler: function() {
+            window.submitForm();
+        }
+    });
+
+    this.cancelBtn = new Ext.Button({
+        text: 'Cancel',
+        handler: function() {
+            window.close();
+        }
+    });
+
+    
+    HkiSm.ux.${2:extObjectName}.superclass.constructor.call(this, {
+        title: '',
+        resizable: false,
+        height: 380,
+        width: 410,
+        // modal: true, // Displays overlay behind window
+        items: [
+
+        ],
+        buttons: [
+            this.cancelBtn,
+            this.saveBtn
+        ]
+    });
+}
+
+Ext.extend(HkiSm.ux.${2:extObjectName}, Ext.Window, {
+    submitForm: function() {
+
+        var window = this;
+
+        Ext.Ajax.request({
+            url: '',
+            method: 'PUT',
+            success: function(response) {
+
+                if (response.status == 200) {
+                    window.close();
+                    return;
+                }else{
+                    
+                }
+
+            },
+            failure: function() {
+
+            },
+            params: {
+                
+            }
+        });
+    }
+});
+
+
+//public static method to open a service request detail windows
+HkiSm.ux.${2:extObjectName}.open = function(id){
+
+    if(${1:globalVariableForWindow}){
+        Ext.destroy(${1:globalVariableForWindow});
+    }
+
+    if (id == null || id =="null"){
+        Ext.Msg.show({
+            title:'Invalid Model Id',
+            msg: 'Invalid Model Id. Please try again',
+            buttons: Ext.Msg.OK
+        });
+        return;
+    }
+    ${1:globalVariableForWindow} = new HkiSm.ux.${2:extObjectName}(id);
+    ${1:globalVariableForWindow}.show();
+}
+
+HkiSm.ux.${2:extObjectName}.close = function(){
+    if(${1:globalVariableForWindow}){
+        Ext.destroy(${1:globalVariableForWindow});
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extWindow</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>
