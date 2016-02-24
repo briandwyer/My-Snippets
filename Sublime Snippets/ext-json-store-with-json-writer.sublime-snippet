@@ -1,0 +1,56 @@
+<snippet>
+	<content><![CDATA[
+	this.remoteProxy = new Ext.data.HttpProxy({
+       api : {
+           read    : {url: '${1:notifications/user/userList.json}', method: 'GET'}, 
+           update  : {url: '${2:notifications/user/userList/update.json}', method: 'POST'} // this.store.save(); will post json from store using jsonWriter 
+       }
+    });
+
+this.writer = new Ext.data.JsonWriter({
+       writeAllFields : true, // Sends all properties of each record updated and not just the updated properties 
+       encode: false, // URL encode disabled so sending json
+       listful: true, // encloses in [] if controller is expecting a list
+       render : function(params, baseParams, data) {
+            params.jsonData = data; 
+            /* This formats data posted to the server. 
+                Because the list we want to post is a nested list from the store we can let jsonData equal to data.
+            */
+        }
+    });
+
+this.store = new Ext.data.JsonStore({ // For some reason an id in the store causes the update of the store to break
+            proxy: this.remoteProxy,        
+            idProperty: '${3:primaryField}', // required for update and must be unique to display all rows
+            fields: [
+                {name: '${3:primaryField}'},
+                {name: 'enabled', type: 'bool'},
+                {name: 'status'},
+                {name: 'storeId'},
+                {name: 'storeName'}
+            ],
+            root: '${4:data.userNotifications}',
+            autoLoad : false,
+            autoSave: false,
+            listeners: {
+                update : function(){
+                    window.saveBtn.setDisabled(false) // update save button to be enabled because the local store has been updated
+                },
+                write : function(){
+                    window.saveBtn.setDisabled(true); // disable button because request was successful
+                    Ext.Msg.alert('Success', "Your changes have been saved.");
+                }
+            },
+            writer: this.writer
+    });
+
+this.store.load({
+        params : {${5:paramName}: paramValue, ${6:paramName2}: paramValue2}
+    });
+    
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extJsonStoreWithJsonWriter</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
