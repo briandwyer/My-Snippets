@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+(function(Ext){
+
+Ext.ns('HkiSm.ux');
+"use strict";
+
+// HkiSm.ux.DbwBarChart = function(config) {
+// PUt yo stuff here
+
+})(Ext);
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extIIFE</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

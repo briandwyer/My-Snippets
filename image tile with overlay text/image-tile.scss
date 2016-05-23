@@ -1,0 +1,297 @@
+/*
+    HTML Sample
+*/
+
+<section class="image-tile-animate-titles image-tiles clearfix">
+
+    <article class="image-tile-item col-lg-3 col-xs-6">
+        <div class="tile-image">
+            <a href="portfolio/tile-rcsi.html">
+                <img class="mobile-image" src="http://placehold.it/400x300" alt="Surgical Application">
+            </a>
+            <div class="tile-overlay">
+                <a href="portfolio/tile-rcsi.html" class="center-icon"><i class="glyphicon glyphicon-option-horizontal"></i></a>
+                <!-- fa fa-ellipsis-h  for font awesome elipsis -->
+            </div>
+        </div>
+        <div class="tile-desc">
+            <h3><a href="portfolio/tile-rcsi.html">RCSI</a></h3>
+            <span>STAT</span>
+        </div>
+    </article>
+
+</section>
+
+
+/*
+    main.scss import
+*/
+@import "image-tiles.scss";
+
+/* Image Tiles - 100% Full Width
+-----------------------------------------------------------------*/
+
+
+.image-tiles {
+    margin: 0 !important;
+    width: 100%;
+}
+
+.image-tiles .image-tile-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.image-tiles .image-tile-item .tile-image,
+.image-tiles .image-tile-item .tile-image > a,
+.image-tiles .image-tile-item .tile-image img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.image-tiles .tile-desc { padding: 15px; }
+
+/* Tile - Overlay
+-----------------------------------------------------------------*/
+
+.tile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    transition: opacity .4s ease-in-out;
+}
+
+.tile-overlay {
+    -webkit-transition: opacity .4s ease-in-out;
+    -o-transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out;
+}
+
+.image-tile-item:hover .tile-overlay {
+    opacity: 1; 
+    display: block;
+}
+
+.tile-overlay a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #F5F5F5;
+    width: 40px !important;
+    height: 40px !important;
+    margin: -28px 0 0 -44px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #444;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+}
+
+.tile-overlay a {
+    -webkit-transition: color .2s linear, background-color .2s linear, margin-top .2s linear, opacity .2s linear;
+    -o-transition: color .2s linear, background-color .2s linear, margin-top .2s linear, opacity .2s linear;
+    transition: color .2s linear, background-color .2s linear, margin-top .2s linear, opacity .2s linear;
+}
+
+
+.tile-overlay a.center-icon {
+    left: auto;
+    right: 50%;
+    margin-left: 0;
+    margin-right: -22px;
+}
+
+.center-icon .glyphicon {
+    top: 4px;
+}
+
+.tile-overlay a:hover {
+    color: #1ABC9C;
+    background-color: #EEE;
+}
+
+.image-tile-item:hover .tile-overlay a.center-icon { margin-top: -18px; }
+
+
+.tile-overlay .tile-desc {
+    position: relative;
+    padding: 0 !important;
+    margin: 0;
+    text-align: center;
+}
+
+.tile-overlay .tile-desc a {
+    display: inline;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: inherit;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1;
+    background-color: transparent !important;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.tile-overlay .tile-desc h3 {
+    font-weight: 600;
+    color: #F5F5F5 !important;
+    line-height: 1;
+}
+
+.tile-overlay .tile-desc h3 a { color: #F5F5F5 !important; }
+
+.tile-overlay .tile-desc span {
+    margin-top: 7px;
+    color: #DDD !important;
+}
+
+.tile-overlay .tile-desc span a {
+    color: #DDD !important;
+    font-size: inherit;
+}
+
+.tile-overlay .tile-desc ~ a {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 20px 0 0 !important;
+}
+
+.tile-overlay .tile-desc ~ a {
+    -webkit-transition: color .2s linear, background-color .2s linear, opacity .2s linear;
+    -o-transition: color .2s linear, background-color .2s linear, opacity .2s linear;
+    transition: color .2s linear, background-color .2s linear, opacity .2s linear;
+}
+
+.tile-overlay .tile-desc ~ a.center-icon {
+    left: 0;
+    right: 0;
+    margin-left: 5px !important;
+    margin-right: 0 !important;
+}
+
+.tile-overlay .tile-desc a:hover { background: transparent; }
+
+.image-tile-animate-titles .tile-overlay,
+.image-tile-animate-titles .tile-overlay { 
+    /*display: none; */
+    opacity: 0; 
+}
+
+
+/* Tile - Item Title
+-----------------------------------------------------------------*/
+
+.tile-desc {
+    z-index: 3;
+    padding: 15px 5px 10px;
+}
+
+.tile-desc h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 19px;
+}
+
+.tile-desc h3 a { color: #222; }
+
+.tile-desc h3 a:hover { color: #1ABC9C; }
+
+.tile-desc span {
+    display: block;
+    margin-top: 3px;
+    color: #888;
+}
+
+.tile-desc span a { color: #888; }
+
+.tile-desc span a:hover { color: #000; }
+
+.image-tile-animate-titles .tile-desc {
+    position: absolute;
+    display: block !important;
+    width: 100%;
+    height: 78px;
+    padding: 15px 10px;
+    top: auto;
+    bottom: -79px;
+    left: 0;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+}
+
+.image-tile-animate-titles .tile-desc {
+    -webkit-transition: bottom .2s ease-in-out;
+    -o-transition: bottom .2s ease-in-out;
+    transition: bottom .2s ease-in-out;
+}
+
+.image-tiles.image-tile-animate-titles .tile-desc {
+    bottom: -78px;
+    border-bottom: 0;
+}
+
+.image-tile-animate-titles .image-tile-item:hover .tile-desc { bottom: 0 !important; }
+
+.bothsidebar .image-tile-animate-titles .image-tile-item:hover .tile-image img {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.image-tile-animate-titles .image-tile-item:hover .tile-image img,
+.bothsidebar .tile-3.image-tile-animate-titles .image-tile-item:hover .tile-image img,
+.bothsidebar .tile-2.image-tile-animate-titles .image-tile-item:hover .tile-image img {
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transform: translateY(-20px);
+}
+
+body.device-touch.device-xs .image-tile-animate-titles .tile-desc,
+body.device-touch.device-xxs .image-tile-animate-titles .tile-desc { display: none !important; }
+
+/* Tile - Items
+-----------------------------------------------------------------*/
+
+.image-tile-item {
+    position: relative;
+    float: left;
+    /*width: 276px;*/
+    margin: 0 12px 12px 0;
+}
+
+.image-tile-animate-titles .image-tile-item { overflow: hidden; }
+
+.image-tile-item .tile-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-tile-item .tile-image,
+.image-tile-item .tile-image a,
+.image-tile-item .tile-image img {
+    display: block;
+    /*width: 276px;*/
+    /*height: 207px;*/
+}
+
+.image-tile-animate-titles .tile-image img {
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
