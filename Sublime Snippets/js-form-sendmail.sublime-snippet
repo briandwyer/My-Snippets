@@ -1,0 +1,99 @@
+<snippet>
+	<content><![CDATA[
+
+// Add to load event
+	SEMICOLON.functions.addFormInputFocusEvents();	
+
+    \$('#jsEmailForm').submit(
+        SEMICOLON.functions.sendEmail
+      );
+
+// Add to functions lib
+
+	sendEmail: function(event){
+        event.preventDefault();
+
+        var form = \$(this);
+        \$.ajax({
+            url: "https://formspree.io/brian.dwyer@greenfinch.ie", 
+            method: "POST",
+            data: form.serialize(),
+            dataType: "json"
+        }).done(function( data ) {
+          SEMICOLON.functions.sendEmailSuccess();
+        }).fail(function(jqXHR) {
+          SEMICOLON.functions.sendEmailFail(jqXHR);
+        });
+
+        return false;
+    },
+
+    sendEmailSuccess: function(){
+        \$('#jsFormSuccess').show();
+        \$('#jsFormFail').hide();
+        \$('#jsFormSubmit').hide();
+        
+    },
+
+    sendEmailFail: function(jqXHR ){
+        if(jqXHR.responseJSON.error){
+          \$('#jsFormFail').append(" " + jqXHR.responseJSON.error);
+        }
+        \$('#jsFormFail').show();
+    },
+    
+
+    addFormInputFocusEvents: function(){
+        \$('input').each(function(){
+          
+          SEMICOLON.functions.addFormLabelActive(this);
+          
+        }); 
+
+        \$('textarea').each(function(){
+          
+          SEMICOLON.functions.addFormLabelActive(this, true);
+          
+        }); 
+
+    },
+
+    addFormLabelActive: function(elem, isTextArea){
+        var \$element = \$(elem);
+
+
+          \$element.focus(function(){
+              var \$label = \$("label[for='"+this.id+"']");
+              \$label.addClass('active');
+
+              if(isTextArea){
+                  var lines = this.value.split(/\r*\n/);
+                  \$element.height((lines.length * 20) + 20);
+                  \$element.keydown(function(e) {
+                      var lines = this.value.split(/\r*\n/);
+                      \$element.height((lines.length * 20) + 20);
+                  });
+              }
+          });
+
+          \$element.focusout(function(){
+            if(!\$element.val()){
+              var \$label = \$("label[for='"+this.id+"']");
+              \$label.removeClass('active');
+              \$element.removeClass('active');
+              \$element.css('height', '');
+            }else if(isTextArea){
+              var lines = this.value.split(/\r*\n/);
+              \$element.height(lines.length * 20)
+            }
+          });
+
+    }
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jsFormSendEmail</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,175 @@
+<snippet>
+	<content><![CDATA[
+/* ------------------------------------- */
+/*       Form    						 */
+/* ------------------------------------- */
+
+\$labelColour: #9e9e9e;
+\$placeholderColour: #d1d1d1;
+\$successColour: #00b59d;
+\$underLineColour: #26a69a;
+\$fontColour: #444;
+
+label {
+    font-size: 0.8rem;
+    color: \$labelColour
+}
+
+::-webkit-input-placeholder {
+    color: \$placeholderColour
+}
+
+:-moz-placeholder {
+    color: \$placeholderColour
+}
+
+::-moz-placeholder {
+    color: \$placeholderColour
+}
+
+:-ms-input-placeholder {
+    color: \$placeholderColour
+}
+
+input:not([type]),input[type=text],input[type=password],input[type=email],input[type=url],input[type=time],input[type=date],input[type=datetime],input[type=datetime-local],input[type=tel],input[type=number],input[type=search],textarea.materialize-textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid \$labelColour;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    margin: 0 0 15px 0;
+    padding-left: 0.8rem;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s
+}
+
+input:not([type]):disabled,input:not([type])[readonly="readonly"],input[type=text]:disabled,input[type=text][readonly="readonly"],input[type=password]:disabled,input[type=password][readonly="readonly"],input[type=email]:disabled,input[type=email][readonly="readonly"],input[type=url]:disabled,input[type=url][readonly="readonly"],input[type=time]:disabled,input[type=time][readonly="readonly"],input[type=date]:disabled,input[type=date][readonly="readonly"],input[type=datetime]:disabled,input[type=datetime][readonly="readonly"],input[type=datetime-local]:disabled,input[type=datetime-local][readonly="readonly"],input[type=tel]:disabled,input[type=tel][readonly="readonly"],input[type=number]:disabled,input[type=number][readonly="readonly"],input[type=search]:disabled,input[type=search][readonly="readonly"],textarea.materialize-textarea:disabled,textarea.materialize-textarea[readonly="readonly"] {
+    color: rgba(0,0,0,0.26);
+    border-bottom: 1px dotted rgba(0,0,0,0.26)
+}
+textarea.materialize-textarea:disabled,textarea.materialize-textarea[readonly="readonly"] {
+    border-left: 1px dotted rgba(0,0,0,0.26)
+}
+
+input:not([type]):disabled+label,input:not([type])[readonly="readonly"]+label,input[type=text]:disabled+label,input[type=text][readonly="readonly"]+label,input[type=password]:disabled+label,input[type=password][readonly="readonly"]+label,input[type=email]:disabled+label,input[type=email][readonly="readonly"]+label,input[type=url]:disabled+label,input[type=url][readonly="readonly"]+label,input[type=time]:disabled+label,input[type=time][readonly="readonly"]+label,input[type=date]:disabled+label,input[type=date][readonly="readonly"]+label,input[type=datetime]:disabled+label,input[type=datetime][readonly="readonly"]+label,input[type=datetime-local]:disabled+label,input[type=datetime-local][readonly="readonly"]+label,input[type=tel]:disabled+label,input[type=tel][readonly="readonly"]+label,input[type=number]:disabled+label,input[type=number][readonly="readonly"]+label,input[type=search]:disabled+label,input[type=search][readonly="readonly"]+label,textarea.materialize-textarea:disabled+label,textarea.materialize-textarea[readonly="readonly"]+label {
+    color: rgba(0,0,0,0.26)
+}
+
+input:not([type]):focus:not([readonly]),input[type=text]:focus:not([readonly]),input[type=password]:focus:not([readonly]),input[type=email]:focus:not([readonly]),input[type=url]:focus:not([readonly]),input[type=time]:focus:not([readonly]),input[type=date]:focus:not([readonly]),input[type=datetime]:focus:not([readonly]),input[type=datetime-local]:focus:not([readonly]),input[type=tel]:focus:not([readonly]),input[type=number]:focus:not([readonly]),input[type=search]:focus:not([readonly]),textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid \$underLineColour;
+    box-shadow: 0 1px 0 0 \$underLineColour
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-left: 1px solid \$underLineColour;
+}
+
+
+input:not([type]):focus:not([readonly])+label,input[type=text]:focus:not([readonly])+label,input[type=password]:focus:not([readonly])+label,input[type=email]:focus:not([readonly])+label,input[type=url]:focus:not([readonly])+label,input[type=time]:focus:not([readonly])+label,input[type=date]:focus:not([readonly])+label,input[type=datetime]:focus:not([readonly])+label,input[type=datetime-local]:focus:not([readonly])+label,input[type=tel]:focus:not([readonly])+label,input[type=number]:focus:not([readonly])+label,input[type=search]:focus:not([readonly])+label,textarea.materialize-textarea:focus:not([readonly])+label {
+    color: \$underLineColour
+}
+
+
+input:not([type])+label:after,input[type=text]+label:after,input[type=password]+label:after,input[type=email]+label:after,input[type=url]+label:after,input[type=time]+label:after,input[type=date]+label:after,input[type=datetime]+label:after,input[type=datetime-local]+label:after,input[type=tel]+label:after,input[type=number]+label:after,input[type=search]+label:after,textarea.materialize-textarea+label:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 65px;
+    opacity: 0;
+    transition: .2s opacity ease-out, .2s color ease-out
+}
+
+.input-field {
+    position: relative;
+    margin-top: 1rem
+}
+
+.input-field label {
+    color: \$labelColour;
+    position: absolute;
+    top: 0.8rem;
+    left: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    cursor: text;
+    transition: .2s ease-out
+}
+
+.input-field label.active {
+    font-size: 1rem;
+    -webkit-transform: translateY(-140%);
+    transform: translateY(-140%)
+}
+
+.input-field .prefix {
+    position: absolute;
+    width: 3rem;
+    font-size: 2rem;
+    transition: color .2s
+}
+
+
+textarea {
+    width: 100%;
+    background-color: transparent
+}
+
+textarea.materialize-textarea {
+    overflow-y: hidden;
+}
+
+textarea.active {
+  height: 150px;
+}
+
+.form-message {
+    display: none;
+    font-size: 100%;
+}
+
+.label-success {
+    background-color: \$successColour;
+}
+
+#jsFormSubmit {
+  display: block;
+}
+
+
+#contact-form .input-field {
+    margin-bottom: 3rem;
+}
+
+#contact-form button{
+margin-bottom: 20px;
+}
+
+
+#contact-form input,
+#contact-form textarea {
+max-width: 50rem;
+}
+
+#contact-form h3{
+margin-bottom: 20px;
+}
+
+#contact-details h3 {
+margin-bottom: 10px;
+}
+
+address {
+margin-bottom: 0px;
+}
+
+/*-------   Form End ------ */
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>scssFormEmail</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+</snippet>
