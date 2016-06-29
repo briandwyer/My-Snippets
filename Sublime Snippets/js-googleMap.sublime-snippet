@@ -1,0 +1,65 @@
+<snippet>
+	<content><![CDATA[
+buildGoogleMap: function(){
+        $('#google-map').gmap3(
+        { map:{
+          options:{
+            center:[53.353458, -6.228786],
+            zoom:16,
+            mapTypeId: 'Think',
+            scaleControl: true,
+            streetViewControl: false,
+            overviewMapControl: true,
+            scrollwheel: true,
+            draggable: true
+          }
+        },
+        marker:{
+          latLng: [53.353458, -6.228786],
+          data:'',
+
+        options:{icon: 'images/js-images/pin-small.png'}
+
+        },
+        styledmaptype:{
+          id: 'Think',
+
+          styles: [
+          {
+            featureType: 'landscape.man_made',
+            elementType: 'geometry',
+            stylers: [
+            { hue: '#009999' },
+            { saturation: -16 },
+            { lightness: 0 },
+            { visibility: 'simplified' }
+            ]
+          },{
+            featureType: 'poi.medical',
+            elementType: 'all',
+            stylers: [
+            { hue: '#009999' },
+            { saturation: -44 },
+            { lightness: 14 },
+            { visibility: 'off' }
+            ]
+          },{
+            featureType: 'poi',
+            elementType: 'all',
+            stylers: [
+            { hue: '#009999' },
+            { saturation: -47 },
+            { lightness: 49 },
+            { visibility: 'off' }
+            ]
+          }
+          ]
+        }
+      });
+  }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jsGoogleMap</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

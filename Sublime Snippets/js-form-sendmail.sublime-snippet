@@ -2,11 +2,9 @@
 	<content><![CDATA[
 
 // Add to load event
-	SEMICOLON.functions.addFormInputFocusEvents();	
+	SEMICOLON.functions.setUpFormEvents();	
 
-    \$('#jsEmailForm').submit(
-        SEMICOLON.functions.sendEmail
-      );
+    
 
 // Add to functions lib
 
@@ -43,7 +41,12 @@
     },
     
 
-    addFormInputFocusEvents: function(){
+    setUpFormEvents: function(){
+
+        \$('#jsEmailForm').submit(
+        SEMICOLON.functions.sendEmail
+      );
+      
         \$('input').each(function(){
           
           SEMICOLON.functions.addFormLabelActive(this);
